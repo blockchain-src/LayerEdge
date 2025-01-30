@@ -130,19 +130,28 @@ fi
     # 输入钱包信息（如果需要）
     if [ ! -f "wallets.txt" ] || [[ "$overwrite" =~ ^[Yy]$ ]]; then
     > wallets.txt  # 创建或清空文件
-    echo "请输入钱包地址和私钥，推荐格式为：钱包地址,私钥"
+    echo "请输入钱包信息，格式必须为：钱包地址,私钥"
     echo "每次输入一个钱包，直接按回车结束输入："
     while true; do
-        read -p "钱包地址,私钥（回车结束）：" wallet
-        if [ -z "$wallet" ]; then
+        read -p "钱包地址：" wallet_address
+        if [ -z "$wallet_address" ]; then
             if [ -s "wallets.txt" ]; then
-                break  # 文件不为空，允许结束
+                break  # 如果 wallets.txt 不为空，允许结束
             else
-                echo "至少需要输入一个有效的钱包地址和私钥！"
+                echo "钱包地址不能为空，请重新输入！"
                 continue
             fi
         fi
-        echo "$wallet" >> wallets.txt  # 将钱包信息写入 wallets.txt
+
+        read -p "私钥：" private_key
+        if [ -z "$private_key" ]; then
+            echo "私钥不能为空，请重新输入！"
+            continue
+        fi
+
+        # 将钱包信息写入 wallets.txt
+        echo "$wallet_address,$private_key" >> wallets.txt
+        echo "钱包信息已保存。"
     done
     fi
 
