@@ -71,10 +71,10 @@ const logger = {
 
     progress(wallet, step, status) {
         const progressStyle = status === 'success' 
-            ? chalk.green('✔') 
+            ? chalk.green('✅') 
             : status === 'failed' 
-            ? chalk.red('✘') 
-            : chalk.yellow('➤');
+            ? chalk.red('❌') 
+            : chalk.yellow('➡️');
         
         console.log(
             chalk.cyan('◆ LayerEdge 自动机器人'),
@@ -376,7 +376,6 @@ async function readWallets() {
 }
 
 async function run() {
-    console.log(banner);
     logger.info('启动 Layer Edge 自动机器人', '初始化中...');
     
     try {
