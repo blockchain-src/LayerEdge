@@ -1,0 +1,4 @@
+customActions:
+  - name: marketMonitor
+    module: custom_actions/market_monitor
+    description: "Monitors market prices and triggers alerts."

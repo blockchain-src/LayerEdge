@@ -1,0 +1,23 @@
+{
+    "name": "MarketBot",
+    "clients": ["telegram"],
+    "modelProvider": "openai",
+    "description": "A bot that monitors cryptocurrency markets and assists with trading decisions.",
+    "settings": {
+      "monitoring": {
+        "symbols": ["BTCUSDT", "ETHUSDT"],
+        "update_interval": 10
+      },
+      "alerts": {
+        "BTCUSDT": {"threshold_up": 30000, "threshold_down": 25000},
+        "ETHUSDT": {"threshold_up": 2000, "threshold_down": 1800}
+      },
+      "trading": {
+        "api_keys": {
+          "binance": "your_binance_api_key",
+          "binance_secret": "your_binance_secret_key"
+        }
+      }
+    }
+  }
+  

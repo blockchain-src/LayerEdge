@@ -1,0 +1,20 @@
+{
+  "name": "send",
+  "version": "1.0.0",
+  "main": "send.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@okxweb3/coin-ethereum": "^1.0.11",
+    "@okxweb3/crypto-lib": "^1.0.6",
+    "dotenv": "^16.4.7",
+    "ethers": "^6.13.4",
+    "node-fetch": "^3.3.2"
+  }
+}
